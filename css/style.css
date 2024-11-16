@@ -7,7 +7,7 @@
     font-family: Inter;
         src: local("Inter-SemiBold"),
         local("Inter SemiBold"),
-        url("../fonts/Inter-SemiBold.ttf") format("ttf"); 
+        url("../fonts/Inter-SemiBold.ttf") format("TrueType"); 
     font-weight: 600;
 }
 
@@ -15,7 +15,7 @@
     font-family: Inter;
         src: local("Inter-Bold"),
         local("Inter Bold"),
-        url("../fonts/Inter-Bold.ttf") format("ttf");
+        url("../fonts/Inter-Bold.ttf") format("TrueType");
     font-weight: 700;
 } 
 
@@ -23,10 +23,12 @@
     color: rgb(110, 104, 147);
     font-size: 24px;
     font-weight: 700;
-    line-height: calc(29/24);
+    line-height: calc(29 / 24);
     letter-spacing: 0.1em;
     text-transform: uppercase ;
-    margin: 0 0 43px;
+    margin: 0 0 21px;
+    padding-bottom: 21px;
+    border-bottom: 1px solid  #C6C2DE;
 }
 
 .modal__button-cancel {
@@ -41,10 +43,11 @@
 }
 
 .modal__form-wrapper{
+    position: relative;
     background-color: #F2F0F9;
     max-width: 792px;
     margin: 0 auto;
-    padding: 32px 106px 28px ;
+    padding: 32px 106px 39px ;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
     background: #F2F0F9;
     position: relative;
@@ -55,12 +58,16 @@
 }    
     
 .modal__fieldset {
-background-color: #FFFFFF;
-border-radius: 8px;
-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-padding: 28px;
-border: transparent;
-margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    grid-template-rows: auto;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    padding: 28px;
+    border: transparent;
+    margin-bottom: 28px;
 }
 
 .modal__checkbox-wrapper {
@@ -86,6 +93,7 @@ margin-bottom: 32px;
 
 .modal__form-input{
     display: block;
+    max-height: 112px;
     font-weight: 600;
     margin-bottom: 12px;
     background-color: #F4F2FF;
@@ -95,6 +103,25 @@ margin-bottom: 32px;
     padding: 10px;
     width: 100%;
     resize: none;
+}
+
+.modal__form-input_last-margin{
+    margin-bottom: 32px;
+}
+
+.modal__button-input {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: calc(17 / 14);
+    padding: 11px 28px;
+    background-color: #6D5BD0;
+    border-radius: 6px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    
+}
+.modal__file-input {
+    width: 100%;
     
 }
 
@@ -150,10 +177,23 @@ margin-bottom: 32px;
 }
 
 .modal__button-wrapper {
-    text-align: right;
-    padding-right: 28px;
+    display: flex;
+    padding: 0 28px;
+    justify-content: space-between;
 }
 
+.modal__price {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: calc(16.94 / 14);
+}
+
+.modal__price-span {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: calc(21.78 / 18);
+    color: #6D5BD0;
+}
 .modal__button {
     border-radius: 6px;
     background: rgb(109, 91, 208);
@@ -165,3 +205,55 @@ margin-bottom: 32px;
     letter-spacing: 0;
 }   
 
+.modal__error-window{
+    position: absolute;
+    top: 132px;
+    left: 221px;
+    max-width: 350px;
+    height: 100%;
+    max-height: 350px;
+    width: 100%;
+    background-color:#F2F0F9;
+    
+}
+
+.modal__error-text{
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    line-height: calc(22 / 18);
+    letter-spacing: calc(1em / 10);
+    color: #6E6893;
+}
+
+.modal__cross-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 26px 29px 0 0;
+    margin-bottom: 63px;
+}
+
+.modal__cross-inner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 33px;
+}
+
+.modal__cross-grey{
+
+}
+.modal__cross-red{
+    display: flex;
+}
+
+.modal__checkbox-wrapper {
+    margin-bottom: 32px;
+}
+.modal__form-text {
+    text-align: center;
+    font-weight: 700;
+    line-height: calc(17 / 14);
+    font-size: 14px;
+    color: #D80101;
+    letter-spacing: 0.1em;
+}
