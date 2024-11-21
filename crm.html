@@ -7,10 +7,11 @@
     <link rel="icon" type="image/svg+xml" href="favicon/circle.svg">
     <link rel="icon" type="image/png" href="favicon/circle.png">
     <script defer src="cart.js"></script>
+    <script defer src="ipv4.js"></script>
     <title>CRM-ShopOnline</title>
 </head>
 <body>
-    <section class="modal__section">
+    <section class="modal-section">
         <div class="container">
             <div class="modal__form-wrapper">
                 <button type="button" class="modal__button-cancel">
@@ -19,7 +20,10 @@
                     <path id="Vector 3" d="M1 21L21 1" stroke="#6E6893" stroke-opacity="1.000000" stroke-width="3.000000" stroke-linecap="round"/>
                     </svg>
                 </button>
-                <h2 class="modal__title">Добавить товар</h2>
+                <div class="modal__text-wrapper">
+                    <h2 class="modal__title">Добавить товар</h2>
+                    <p class="modal__text-id">id: 201910241</p>
+                </div>
                 <form class="modal__form" action="https://jsonplaceholder.typicode.com/posts"
                         method="post"  name="form">
                     <fieldset class="modal__fieldset">
@@ -31,30 +35,30 @@
                             <label class="modal__form-label" for="unit">Единицы измерения</label>
                             <input class="modal__form-input" type="text" name="unit"  id="unit" required>    
                             <label class="modal__form-label" for="discount">Дисконт</label>
-                                <div class="modal__checkbox-wrapper">
-                                    <input class=" modal__form-checkbox" type="checkbox"  id="discount">
-                                    <input class=" modal__form-input" type="text"  name="discont" id="discount" disabled  required >
+                            <div class="modal__checkbox-wrapper">
+                                <input class=" modal__form-checkbox" type="checkbox"  id="discount">
+                                <input class=" modal__form-input" type="text"  name="discont" id="discount" disabled  required >
+                            </div>
+                            <p class="modal__form-text">
+                                Изображение не должно превышать размер 1 Мб
+                            </p>
+                            <div class="modal__error-window visually-hidden">
+                                <div class="modal__cross-wrapper">
+                                    <svg class="modal__cross-grey" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
+                                    </svg>
                                 </div>
-                                <p class="modal__form-text">
-                                    Изображение не должно превышать размер 1 Мб
-                                </p>
-                                <div class="modal__error-window">
-                                    <div class="modal__cross-wrapper">
-                                        <svg class="modal__cross-grey" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
-                                            <path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="modal__cross-inner">
-                                        <svg class="modal__cross-red" width="94" height="94" viewBox="0 0 94 94" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2 2L92 92" stroke="#D80101" stroke-width="3" stroke-linecap="round"/>
-                                            <path d="M2 92L92 2" stroke="#D80101" stroke-width="3" stroke-linecap="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="modal__error-text">
-                                        Что-то пошло не так
-                                    </p>        
-                                </div>        
+                                <div class="modal__cross-inner">
+                                    <svg class="modal__cross-red" width="94" height="94" viewBox="0 0 94 94" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 2L92 92" stroke="#D80101" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M2 92L92 2" stroke="#D80101" stroke-width="3" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <p class="modal__error-text">
+                                    Что-то пошло не так
+                                </p>        
+                            </div>        
                         </div>
                         <div class="modal__fieldset-wrapper">
                             <label class="modal__form-label" for="about">Описание</label>
@@ -67,6 +71,14 @@
                                 Добавить изображение
                                 <input  class="modal__file-input visually-hidden" type="file"> 
                             </button>
+                        </div>
+                        <div class="modal__img-wrapper">
+                            <img class="modal__form-img" src="img/img.png" alt="Изображение товара">
+                            <img class="modal__form-img-grey visually-hidden" src="img/img.png" alt="Изображение товара">
+                            <svg class="modal__form-svg visually-hidden" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.5334 17.45L20 20.9833L16.45 17.45L14.1 19.8L17.65 23.3333L14.1167 26.8667L16.4667 29.2167L20 25.6833L23.5334 29.2167L25.8834 26.8667L22.35 23.3333L25.8834 19.8L23.5334 17.45ZM25.8334 6.66667L24.1667 5H15.8334L14.1667 6.66667H8.33337V10H31.6667V6.66667H25.8334ZM10 31.6667C10 33.5 11.5 35 13.3334 35H26.6667C28.5 35 30 33.5 30 31.6667V11.6667H10V31.6667ZM13.3334 15H26.6667V31.6667H13.3334V15Z" fill="white"/>
+                            </svg>
+                                
                         </div>
                     </fieldset>  
                     <div class="modal__button-wrapper">
@@ -83,6 +95,85 @@
                     
                 </form>       
             </div>
+        </div>
+    </section>
+    <section class="crm-section">
+        <div class="container">
+            <div class="crm__text-wrapper">
+                <h2 class="crm-title">CMS</h2>
+                <p class="modal__price">
+                    Итоговая стоимость: 
+                    <span class="modal__price-span">
+                        $ 900.00
+                    </span>
+                </p>
+            </div>
+            <div class="crm__functional-wrapper">
+                <div class="crm__serch-wrapper">
+                    <button class="crm__serch-button" type="button">
+                        <svg class="crm__serch-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12L20 4V0H0V4L8 12V20L12 16V12Z" fill="#8B83BA"/>
+                        </svg>
+                        <p class="crm__serch-text">Фильтр</p>
+                    </button>
+                    <div class="crm__serch-inner">
+                        <input class="crm__serch-input" type="serch" placeholder="Поиск по наименованию и категории">  
+                        <svg class="crm__serch-icon "width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.4097 14.8822C11.7399 16.1799 9.63851 16.7922 7.53338 16.5942C5.42824 16.3963 3.47766 15.403 2.07881 13.8166C0.679961 12.2303 -0.0619809 10.1701 0.00405863 8.05565C0.0700982 5.94118 0.939153 3.9314 2.43427 2.43552C3.92939 0.939633 5.93814 0.0701341 8.05152 0.00406071C10.1649 -0.0620127 12.224 0.680308 13.8096 2.07987C15.3951 3.47944 16.3879 5.43102 16.5857 7.53723C16.7836 9.64345 16.1717 11.7459 14.8745 13.4166L19.6936 18.2201C20.1016 18.6267 20.1022 19.2872 19.695 19.6946C19.2878 20.1021 18.6273 20.1017 18.2204 19.6939L13.4201 14.8822H13.4097ZM8.31916 14.5495C9.13773 14.5495 9.94829 14.3882 10.7045 14.0748C11.4608 13.7614 12.148 13.302 12.7268 12.7229C13.3056 12.1438 13.7647 11.4563 14.078 10.6996C14.3913 9.94298 14.5525 9.13201 14.5525 8.31302C14.5525 7.49403 14.3913 6.68306 14.078 5.92641C13.7647 5.16976 13.3056 4.48225 12.7268 3.90314C12.148 3.32402 11.4608 2.86465 10.7045 2.55123C9.94829 2.23782 9.13773 2.07651 8.31916 2.07651C6.66598 2.07651 5.08051 2.73356 3.91153 3.90314C2.74256 5.07271 2.08583 6.659 2.08583 8.31302C2.08583 9.96705 2.74256 11.5533 3.91153 12.7229C5.08051 13.8925 6.66598 14.5495 8.31916 14.5495Z" fill="#8B83BA"/>
+                        </svg>
+                    </div>
+                </div>    
+                <button type="submit" class="modal__button">
+                    Добавить товар
+                </button>
+            </div>
+            <table class="crm__table-header" border style="width: 100%;">
+                <tr>
+                    <td>ID</td>
+                    <td>Наименование</td>
+                    <td>Категория</td>
+                    <td>ед/изм</td>
+                    <td>количество</td>
+                    <td>цена</td>
+                    <td>ИТОГ</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>246016548</th>
+                    <th>Навигационная система Soundmax</th>
+                    <th>Техника для дома</th>
+                    <th>шт</th>
+                    <th>5</th>
+                    <th>$100</th>
+                    <th>$500</th>
+                    <th>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.75 2.13375L17.8663 1.25L1.25 17.8663L2.13375 18.75L3.38375 17.5H16.25C16.5814 17.4995 16.899 17.3676 17.1333 17.1333C17.3676 16.899 17.4995 16.5814 17.5 16.25V3.38375L18.75 2.13375ZM16.25 16.25H4.63375L9.50437 11.3794L10.9913 12.8663C11.2257 13.1006 11.5435 13.2322 11.875 13.2322C12.2065 13.2322 12.5243 13.1006 12.7587 12.8663L13.75 11.875L16.25 14.3731V16.25ZM16.25 12.605L14.6337 10.9888C14.3993 10.7544 14.0815 10.6228 13.75 10.6228C13.4185 10.6228 13.1007 10.7544 12.8663 10.9888L11.875 11.98L10.3894 10.4944L16.25 4.63375V12.605Z" fill="#6E6893"/>
+                            <path d="M3.75 13.75V11.875L6.875 8.75187L7.73313 9.61062L8.61812 8.72563L7.75875 7.86625C7.52434 7.63191 7.20646 7.50027 6.875 7.50027C6.54354 7.50027 6.22566 7.63191 5.99125 7.86625L3.75 10.1075V3.75H13.75V2.5H3.75C3.41858 2.50033 3.10083 2.63213 2.86648 2.86648C2.63213 3.10083 2.50033 3.41858 2.5 3.75V13.75H3.75Z" fill="#6E6893"/>
+                        </svg>
+                    </th>
+                    <th>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_8452_14)">
+                            <path d="M15.5629 4.86078L17.6394 6.93629L15.5629 4.86078ZM16.8982 3.03233L11.2834 8.64709C10.9933 8.9368 10.7955 9.3059 10.7148 9.70789L10.1962 12.304L12.7923 11.7844C13.1942 11.704 13.5629 11.5069 13.8531 11.2167L19.4678 5.60196C19.6366 5.43324 19.7704 5.23293 19.8617 5.01248C19.953 4.79203 20 4.55576 20 4.31714C20 4.07853 19.953 3.84225 19.8617 3.6218C19.7704 3.40136 19.6366 3.20105 19.4678 3.03233C19.2991 2.8636 19.0988 2.72976 18.8784 2.63845C18.6579 2.54714 18.4216 2.50014 18.183 2.50014C17.9444 2.50014 17.7081 2.54714 17.4877 2.63845C17.2672 2.72976 17.0669 2.8636 16.8982 3.03233V3.03233Z" stroke="#6E6893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.0394 14.2648V17.206C18.0394 17.726 17.8328 18.2248 17.4651 18.5925C17.0973 18.9602 16.5986 19.1668 16.0786 19.1668H5.29415C4.77411 19.1668 4.27537 18.9602 3.90765 18.5925C3.53993 18.2248 3.33334 17.726 3.33334 17.206V6.42157C3.33334 5.90154 3.53993 5.4028 3.90765 5.03508C4.27537 4.66735 4.77411 4.46077 5.29415 4.46077H8.23535" stroke="#6E6893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_8452_14">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </th>
+                    <th>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z" fill="#6E6893"/>
+                        </svg>
+                    </th>
+                </tr>
+            </table>
         </div>
     </section>
 </body>

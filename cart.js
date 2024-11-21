@@ -2,18 +2,15 @@
 
 const cart = {
     items: [],
-    totalPrice: 0,
+    _totalPrice: 0,
     count: 0,
 
-    getTotalPrice() {
-        return this.totalPrice;
-    },
-
     calculateItemPrice() {
-        this.totalPrice = this.items.reduce((sum, item) => {
+        this._totalPrice = this.items.reduce((sum, item) => {
             
-            return sum + item.price * item.quantity;
+            return  sum + item.price * item.quantity;
             
+
         }, 0);
     },
 
@@ -23,20 +20,37 @@ const cart = {
 
     add(name, price, quantity = 1) { 
         const newItem = { name, price, quantity };
-        this.items.push(newItem);
+        this.items.push(newItem); 
+        this.increaseCount(quantity);
         this.calculateItemPrice(); 
-        this.increaseCount(quantity); 
     },
 
     clear() {
         this.items = []; 
-        this.totalPrice = 0; 
+        this._totalPrice = 0; 
         this.count = 0; 
     },
 
     print() {
         console.log(JSON.stringify(this.items));
-        console.log(this.totalPrice);
+        console.log( this._totalPrice);
     },
 };
+
+Object.defineProperty(cart, 'totalPrice', {
+    get() {
+        this.calculateItemPrice();
+        return this._totalPrice;
+    }
+});
+
+
+cart.add('app', 16, 4);
+cart.add('qiwi', 3, 66);
+cart.add('banan', 22, 34);
+console.log(cart);
+cart.print();
+
+
+
 

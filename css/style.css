@@ -1,6 +1,7 @@
 
 @import url("normalize.css");
 @import url("default.css");
+@import url("var.css");
 
 
 @font-face {
@@ -19,16 +20,29 @@
     font-weight: 700;
 } 
 
+.modal__text-wrapper {
+    display: flex;
+    margin: 0 0 21px;
+    padding-bottom: 21px;
+    border-bottom: 1px solid var(--primary-color-dark-grey);
+    justify-content: space-between;
+    align-items: center;
+}
+
 .modal__title {
-    color: rgb(110, 104, 147);
+    color: var(--primary-color-grey);
     font-size: 24px;
     font-weight: 700;
     line-height: calc(29 / 24);
     letter-spacing: 0.1em;
     text-transform: uppercase ;
-    margin: 0 0 21px;
-    padding-bottom: 21px;
-    border-bottom: 1px solid  #C6C2DE;
+}
+
+.modal__text-id {
+    font-weight: 600;
+    line-height: calc(12 / 10);
+    font-size: 10px;
+    color: var(--primary-color-dust);
 }
 
 .modal__button-cancel {
@@ -38,19 +52,18 @@
     border: none;
 }
 
-.modal__section {
+.modal-section {
     padding: 20px 0 99px;
 }
 
 .modal__form-wrapper{
     position: relative;
-    background-color: #F2F0F9;
+    background-color: var(--primary-color-light-grey);
     max-width: 792px;
     margin: 0 auto;
     padding: 32px 106px 39px ;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
-    background: #F2F0F9;
-    position: relative;
+    background-color:var(--primary-color-light-grey);
 }
 
 .modal__form {
@@ -62,7 +75,7 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 24px;
     grid-template-rows: auto;
-    background-color: #FFFFFF;
+    background-color: var(--primary-color-white);
     border-radius: 8px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     padding: 28px;
@@ -96,7 +109,7 @@
     max-height: 112px;
     font-weight: 600;
     margin-bottom: 12px;
-    background-color: #F4F2FF;
+    background-color: var(--primary-color-dark-white);
     border: none;
     border-radius: 6px;
     line-height: calc(15 / 12);
@@ -114,12 +127,13 @@
     font-size: 14px;
     line-height: calc(17 / 14);
     padding: 11px 28px;
-    background-color: #6D5BD0;
+    background-color: var(--primary-color-blue);
     border-radius: 6px;
-    color: #FFFFFF;
+    color: var(--primary-color-white);
     text-transform: uppercase;
     
 }
+
 .modal__file-input {
     width: 100%;
     
@@ -128,6 +142,7 @@
 .modal__form-input:last-child {
     margin: 0;
 }
+
 .modal__form-checkbox {
     position: absolute;
     -webkit-appearance: none;
@@ -145,8 +160,7 @@
     display: block;
     width: 40px;
     height: 40px;
-    background-color: #F4F2FF;
-    /* box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); */
+    background-color: var(--primary-color-dark-white);
     border-radius: 8px;
 }
 
@@ -157,7 +171,7 @@
     left: 10px;
     width: 20px;
     height: 10px;
-    border: 3px solid black;
+    border: 3px solid var(--primary-color-black);
     border-top: none;
     border-right: none;
     opacity: 0;
@@ -173,7 +187,7 @@
 }
 
 .modal__form-checkbox:disabled:before {
-    background-color: #cccccc;
+    background-color: var(--primary-color-brow);
 }
 
 .modal__button-wrapper {
@@ -192,12 +206,13 @@
     font-weight: 700;
     font-size: 18px;
     line-height: calc(21.78 / 18);
-    color: #6D5BD0;
+    color: var(--primary-color-blue);
 }
+
 .modal__button {
     border-radius: 6px;
     background: rgb(109, 91, 208);
-    color: #FFFFFF;
+    color: var(--primary-color-white);
     padding: 10px 25px;
     font-size: 16px;
     text-transform: uppercase;
@@ -206,6 +221,7 @@
 }   
 
 .modal__error-window{
+    
     position: absolute;
     top: 132px;
     left: 221px;
@@ -213,8 +229,7 @@
     height: 100%;
     max-height: 350px;
     width: 100%;
-    background-color:#F2F0F9;
-    
+    background-color:var(--primary-color-light-grey);
 }
 
 .modal__error-text{
@@ -223,7 +238,7 @@
     font-size: 18px;
     line-height: calc(22 / 18);
     letter-spacing: calc(1em / 10);
-    color: #6E6893;
+    color: var(--primary-color-grey);
 }
 
 .modal__cross-wrapper {
@@ -239,9 +254,6 @@
     margin-bottom: 33px;
 }
 
-.modal__cross-grey{
-
-}
 .modal__cross-red{
     display: flex;
 }
@@ -249,11 +261,97 @@
 .modal__checkbox-wrapper {
     margin-bottom: 32px;
 }
+
 .modal__form-text {
     text-align: center;
     font-weight: 700;
     line-height: calc(17 / 14);
     font-size: 14px;
-    color: #D80101;
+    color: var(--primary-color-red);
     letter-spacing: 0.1em;
+}
+
+.modal__fieldset-wrapper{
+    margin-bottom: 30px;
+}
+
+.modal__img-wrapper {
+    grid-column: 1 / 3;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.modal__form-svg {
+    position: absolute;
+    top: 80px;
+    left: 242px;
+}
+
+.crm-section {
+    padding: 79px 100px 120px;
+    background-color: var(--primary-color-light-grey);
+}
+
+
+.crm__functional-wrapper {
+    background-color: var(--primary-color-white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.crm__text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--primary-color-dark-grey);
+}
+
+.crm__serch-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 520px;
+    width: 100%;
+}
+
+.crm__serch-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 6px;
+    border:1px solid var(--primary-color-dark-grey);
+    color: var(--primary-color-light-black);
+    font-size: 16px;
+    line-height: calc(19 / 16);
+}
+
+.crm__serch-input {
+    border: 1px solid var(--primary-color-dark-white);
+    background-color: var(--primary-color-dark-white);
+    border-radius: 6px;
+    padding: 12px 10px 12px 40px;
+    width: 100%;
+}
+
+.crm__serch-input{
+    color: var(--primary-color-grey);
+    font-size: 12px;
+    line-height: calc(15 / 12);
+}
+
+.crm__serch-inner {
+    position: relative;
+    max-width: 392px;
+    width: 100%;
+}
+.crm__serch-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
