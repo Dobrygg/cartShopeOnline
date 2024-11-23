@@ -3,10 +3,10 @@
 
 const cart = {
 items: [],
+count: 0,
 get totalPrice() {
 return calculateltemPrice();
 },
-count: 0,
 calculateltemPrice() {
     return this.items.reduce((sum, item) => {
     return sum +  item.price * item.quantity;
