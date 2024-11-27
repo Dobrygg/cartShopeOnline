@@ -9,7 +9,7 @@ const cart = {
       sum + item.price * item.quantity, 0);
   },
   get totalPrice() {
-    return calculateltemPrice();
+    return this.calculateltemPrice();
   },
   add(name, price, quantity = 1) {
     const newItems = {
